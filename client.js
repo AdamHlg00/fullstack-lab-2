@@ -250,6 +250,7 @@ async function getAlbums() {
       method: 'GET',
       headers: { 'content-type': 'application/json' }
     })
+    console.log(result)
     let rest = await result.json()
     return rest
   } catch (error) {
