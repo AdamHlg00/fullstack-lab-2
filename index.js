@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 
 require('dotenv').config()
+
 
 const port = process.env.PORT
 
@@ -10,6 +12,8 @@ app.use(express.json())
 app.use(cors({
   origin: "*",
 }))
+
+app.use(express.static('.'))
 
 // Imports album model
 const AlbumModel = require('./models/albumModel')
@@ -39,7 +43,11 @@ app.listen(port, () => {
 
 // Default route
 app.get('/', async function (req, res) {
-  res.sendFile('index.html', { root: __dirname })
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
+
+app.get('/client.js', async function (req, res) {
+  res.json('eeeee')
 })
 
 // Route to get and display all albums
