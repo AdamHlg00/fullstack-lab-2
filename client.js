@@ -203,7 +203,7 @@ addButton.addEventListener('click', async event => {
 // Fetch for getting details about a specific album
 async function getAlbumDetails(albumTitle) {
   try {
-    let result = await fetch(`/api/albums/${albumTitle}`, {
+    let result = await fetch(`http://localhost:3000/api/albums/${albumTitle}`, {
       method: 'GET',
       headers: { 'content-type': 'application/json' }
     })
@@ -217,7 +217,7 @@ async function getAlbumDetails(albumTitle) {
 // Fetch for updating information of an album
 async function updateAlbum(albumData, albumId) {
   try {
-    let result = await fetch(`/api/albums/${albumId}`, {
+    let result = await fetch(`http://localhost:3000/api/albums/${albumId}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
       body: albumData
@@ -232,7 +232,7 @@ async function updateAlbum(albumData, albumId) {
 // Fetch for deleting an album
 async function deleteAlbum(albumData) {
   try {
-    let result = await fetch(`/api/albums/${albumData}`, {
+    let result = await fetch(`http://localhost:3000/api/albums/${albumData}`, {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
     })
@@ -246,7 +246,7 @@ async function deleteAlbum(albumData) {
 // Fetch for getting all albums
 async function getAlbums() {
   try {
-    let result = await fetch('/api/albums', {
+    let result = await fetch('http://localhost:3000/api/albums', {
       method: 'GET',
       headers: { 'content-type': 'application/json' }
     })
@@ -260,7 +260,7 @@ async function getAlbums() {
 // Fetch for adding an album
 async function addAlbum(albumData) {
   try {
-    let result = await fetch('/api/albums', {
+    let result = await fetch('http://localhost:3000/api/albums', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: albumData
