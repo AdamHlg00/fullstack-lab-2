@@ -33,9 +33,9 @@ app.listen(port, () => {
   console.log('Server is listening on port: ' + port)
 })
 
-app.get('*', (req, res) => {
+/*app.get('*', (req, res) => {
   res.sendFile('index.html', { root: __dirname })
-})
+})*/
 
 // Default route
 app.get('/', async function (req, res) {
