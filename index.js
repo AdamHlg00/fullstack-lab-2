@@ -34,7 +34,7 @@ app.listen(port, () => {
 })
 
 app.get('*', (req, res) => {
-  res.renderFile('index.html', { root: __dirname })
+  res.sendFile('index.html', { root: __dirname })
 })
 
 // Default route
