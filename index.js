@@ -33,6 +33,10 @@ app.listen(port, () => {
   console.log('Server is listening on port: ' + port)
 })
 
+app.get('*', (req, res) => {
+  res.renderFile('index.html', { root: __dirname })
+})
+
 // Default route
 app.get('/', async function (req, res) {
 })
